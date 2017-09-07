@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8" />
+	<title>Ecoescambo</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+  <header>
+    <div class="page-header">
+      <ul class="nav nav-tabs">
+        <li role="presentation"><a href="../index.php">Produtos</a></li>
+        <li role="presentation"><a href="login.html">Login</a></li>
+        <li role="presentation"><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-3 text-center">EcoEscambo</h1>
+      <hr class="my-4">
+      <form method="POST" action="cadastro.php">
+        <div class="form-group">
+          <label>Login:</label>
+          <input type="text" name="login" id="login" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Senha:</label><input type="password" name="senha" id="senha" class="form-control">
+        </div>
+        <input type="submit" value="Login" id="cadastrar" name="cadastrar" class="btn btn-primary">
+      </form>
+      <a href="templates/cadastro.html"><button class="btn btn-primary">Cadastre-se</button></a>
+    </div>
+  </div>
+</body>
+</html>
