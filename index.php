@@ -1,3 +1,12 @@
+<?php
+	$arquivo = glob('img/*.*');
+	$quantidade = 10;
+	$paginaAtual = (isset($_GET['paginacao'])) ? intval($_GET['paginacao']) : 1;
+	$paginas = array_chunk($arquivo, $quantidade);
+	$quantidadePaginas = count($paginas);
+	$resultado = $paginas[$paginaAtual - 1];
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,10 +29,28 @@
 	</header>
 
 	<div class="container">
-		<div class="jumbotron">
-			<h1 class="display-3 text-center">index</h1>
-		</div>
-	</div>
+		<div class="row">
+			<?php
+				foreach ($resultado as $valor) {
+					printf('<div class="col-md-3">');
+					printf('<img src="%s" class="img-rounded"/>', $valor);
+					printf('<p class="text-justify"> legenda da foto </p>');
+					printf('</div>');
+				}
+				echo '</div>';
+				echo '<hr>';
+
+				for($i = 1; $i <= $quantidadePaginas; $i++){
+					if($i === $paginaAtual){
+						printf('<a href="#"><u> %s </u></a>', $i);
+					}
+					else{
+						printf('<a href="?paginacao=%s"> %s </a>', $i, $i);
+					}
+				}
+				echo '</div>';
+			 ?>
+
 	<?php
 		// 	require_once 'model/Usuario.php';
 		// 	require_once 'services/validadoresService.php';

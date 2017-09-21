@@ -1,28 +1,23 @@
 <?php
 
-  $nome = $_POST['nome'];
-  $email = $_POST['email'];
-  $telefone = $_POST['telefone'];
-  $cep = $_POST['cep'];
-  $senha = MD5($_POST['senha']);
-  $confirmacaoSenha = MD5($_POST['confirmacaosenha']);
+  $nome = filter_input( INPUT_POST, "nome", FILTER_SANITIZE_STRING);
+  $email = filter_input( INPUT_POST, "email", FILTER_SANITIZE_STRING);
+  $telefone = filter_input( INPUT_POST, "telefone", FILTER_SANITIZE_STRING);
+  $cep = filter_input( INPUT_POST, "cep", FILTER_SANITIZE_STRING);
+  $senha = filter_input( INPUT_POST, "senha", FILTER_SANITIZE_STRING);
+  $confirmacaoSenha = filter_input( INPUT_POST, "confirmacaosenha", FILTER_SANITIZE_STRING);
+  //filter_input( INPUT_POST, "nome", FILTER_SANITIZE_STRING);
 
-  if($senha === $confirmacaoSenha){
+  if($senha !== $confirmacaoSenha){
+    echo"<script language='javascript' type='text/javascript'>alert('Você inseriu duas senhas diferentes');window.location.href='cadastro.html';</script>";
     //echo"<script language='javascript' type='text/javascript'>alert('Você inseriu duas senhas iguais');</script>";
   }
-  else{
-     echo"<script language='javascript' type='text/javascript'>alert('Você inseriu duas senhas diferentes');window.location.href='cadastro.html';</script>";
-  }
+
 
   if($nome == "" || $nome == null || $senha == "" || $senha == null || $email == "" || $email == null ||
       $confirmacaoSenha == "" || $confirmacaoSenha = null || $cep == "" || $cep == null || $telefone == "" || $telefone == null){
       echo"<script language='javascript' type='text/javascript'>alert('Todos os campos devem ser preenchidos');window.location.href='cadastro.html';</script>";
   }
-
-  // if($senha !== $confirmacaoSenha){
-  //   echo"<script language='javascript' type='text/javascript'>alert('Você inseriu duas senhas diferentes');window.location.href='cadastro.html';</script>";
-  // }
-
 
   require_once '../services/validadoresService.php';
   require_once '../model/Usuario.php';
