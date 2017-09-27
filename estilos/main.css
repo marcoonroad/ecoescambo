@@ -1,0 +1,19 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin: 0 0 60px;
+    /* bottom = footer height */
+}
+header {
+    background-color: #1abc9c;
+}
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    background-color: #1abc9c;
+    padding: 3% 0 3% 0; position:
+}

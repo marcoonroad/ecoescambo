@@ -6,23 +6,18 @@
 	<title>Ecoescambo</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="estilos/main.css">
 </head>
 <body>
-	<header>
-		<div class="page-header">
-			<ul class="nav nav-tabs">
-			  <li role="presentation"><a href="../index.php">Produtos</a></li>
-			  <li role="presentation"><a href="login.html">Login</a></li>
-			  <li role="presentation"><a href="cadastro.html">Cadastro</a></li>
-			</ul>
-		</div>
-	</header>
+	<?php
+		require_once 'templates/header.html';
+	 ?>
 
 	<div class="container">
 		<div class="jumbotron">
 			<h1 class="display-3 text-center">EcoEscambo</h1>
 			<hr class="my-4">
-			<form method="POST" action="cadastro.php">
+			<form method="POST" action="tratamentoCadastro.php">
 				<div class="form-group">
 					<label>Nome:</label>
 					<input type="text" name="nome" id="nome" class="form-control">
@@ -51,5 +46,9 @@
 			</form>
 		</div>
 	</div>
+
+	<?php
+		require_once 'templates/footer.html';
+	 ?>
 </body>
 </html>
