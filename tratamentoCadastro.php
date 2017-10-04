@@ -1,16 +1,19 @@
 <?php
 
-  $nome = filter_input( INPUT_POST, "nome", FILTER_SANITIZE_STRING);
-  $email = filter_input( INPUT_POST, "email", FILTER_SANITIZE_STRING);
-  $telefone = filter_input( INPUT_POST, "telefone", FILTER_SANITIZE_STRING);
-  $cep = filter_input( INPUT_POST, "cep", FILTER_SANITIZE_STRING);
-  $senha = filter_input( INPUT_POST, "senha", FILTER_SANITIZE_STRING);
-  $confirmacaoSenha = filter_input( INPUT_POST, "confirmacaosenha", FILTER_SANITIZE_STRING);
-  //filter_input( INPUT_POST, "nome", FILTER_SANITIZE_STRING);
+  // TODO:
+  // limpar esse arquivo refatorando-o
 
-  if($senha !== $confirmacaoSenha){
-    echo"<script language='javascript' type='text/javascript'>alert('Você inseriu duas senhas diferentes');window.location.href='cadastro.php';</script>";
-    //echo"<script language='javascript' type='text/javascript'>alert('Você inseriu duas senhas iguais');</script>";
+  $nome             = filter_input (INPUT_POST, "nome",             FILTER_SANITIZE_STRING);
+  $email            = filter_input (INPUT_POST, "email",            FILTER_SANITIZE_STRING);
+  $telefone         = filter_input (INPUT_POST, "telefone",         FILTER_SANITIZE_STRING);
+  $cep              = filter_input (INPUT_POST, "cep",              FILTER_SANITIZE_STRING);
+  $senha            = filter_input (INPUT_POST, "senha",            FILTER_SANITIZE_STRING);
+  $confirmacaoSenha = filter_input (INPUT_POST, "confirmacaosenha", FILTER_SANITIZE_STRING);
+  // filter_input( INPUT_POST, "nome", FILTER_SANITIZE_STRING);
+
+  if ($senha !== $confirmacaoSenha) {
+        echo"<script language='javascript' type='text/javascript'>alert('Você inseriu duas senhas diferentes');window.location.href='cadastro.php';</script>";
+        // echo"<script language='javascript' type='text/javascript'>alert('Você inseriu duas senhas iguais');</script>";
   }
 
 
@@ -32,10 +35,10 @@
   if(!$validador->validarSenha($senha))
     echo"<script language='javascript' type='text/javascript'>alert('Insira uma senha válida.');window.location.href='cadastro.php';</script>";
 
-  $usuario = new Usuario($nome, $email, $telefone, $cep, $senha);
+  $usuario = new Usuario ($nome, $email, $telefone, $cep, $senha);
   echo"<script language='javascript' type='text/javascript'>alert('Sua conta foi criada e será ativada após a confirmação de e-mail!');window.location.href='login.php'</script>";
 
-  //conexão com o bd e persistencia do usuario
+    //conexão com o bd e persistencia do usuario
     // try {
     //   $conexaoBD = new PDO('mysql:host=localhost;dbname=mysql', 'root', 'vertrigo');
     //   if($usuario->persisteUsuario($conexaoBD))

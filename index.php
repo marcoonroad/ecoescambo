@@ -1,10 +1,11 @@
 <?php
-	$arquivo = glob('img/*.*');
-	$quantidade = 10;
-	$paginaAtual = (isset($_GET['paginacao'])) ? intval($_GET['paginacao']) : 1;
-	$paginas = array_chunk($arquivo, $quantidade);
+
+	$arquivo           = glob('img/*.*');
+	$quantidade        = 10;
+	$paginaAtual       = (isset($_GET['paginacao'])) ? intval($_GET['paginacao']) : 1;
+	$paginas           = array_chunk($arquivo, $quantidade);
 	$quantidadePaginas = count($paginas);
-	$resultado = $paginas[$paginaAtual - 1];
+	$resultado         = $paginas[$paginaAtual - 1];
 
 ?>
 <!DOCTYPE html>
@@ -20,45 +21,45 @@
 </head>
 
 <body>
-
-	<?php
-		require_once 'templates/header.html';
-	 ?>
+    <?php require_once 'templates/header.html'; ?>
 
 	<div class="container" style="padding-bottom: 60px;">
-		<div class="row">
+        <div class="row">
 			<?php
 				foreach ($resultado as $valor) {
 					printf('<div class="col-md-3">');
-					printf('<a href="detalheProduto.php?produto=%s"><img src="%s" class="img-rounded"/></a>', $valor, $valor);
-					printf('<p class="text-justify"> legenda da foto </p>');
+                    printf('<a href="detalheProduto.php?produto=%s" class=""><img src="%s" ' .
+                        'class="picture-content img-rounded"/></a>', $valor, $valor);
+					printf('<p class="picture-label text-justify">legenda da foto</p>');
 					printf('</div>');
 				}
 				echo '</div>';
 				echo '<hr>';
 				for($i = 1; $i <= $quantidadePaginas; $i++){
 					if($i === $paginaAtual){
-						printf('<a href="#"><u> %s </u></a>', $i);
+						printf('<a class="page-link" href="#"><u>%s</u></a>', $i);
 					}
 					else{
-						printf('<a href="?paginacao=%s"> %s </a>', $i, $i);
+						printf('<a class="page-link" href="?paginacao=%s">%s</a>', $i, $i);
 					}
 				}
 				echo '</div>';
-			 ?>
-			  <!-- <div class="navbar navbar-default navbar-fixed-bottom">
-		     <div class="container">
+            ?>
+
+            <!-- <div class="navbar navbar-default navbar-fixed-bottom">
+		    <div class="container">
 		       <p class="navbar-text pull-left">© 2014 - Site Built By Mr. M.
 		            <a href="http://tinyurl.com/tbvalid" target="_blank" >HTML 5 Validation</a>
 		       </p>
 
 		       <a href="http://youtu.be/zJahlKPCL9g" class="navbar-btn btn-danger btn pull-right">
 		       <span class="glyphicon glyphicon-star"></span>  Subscribe on YouTube</a>
-		     </div>
-		 </div>  -->
-		 <?php
+		    </div>
+        </div>  -->
+
+		<?php
  			require_once 'templates/footer.html';
- 		 ?>
+ 		?>
 
 </body>
 </html>
