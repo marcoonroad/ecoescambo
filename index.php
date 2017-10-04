@@ -30,7 +30,7 @@
 					printf('<div class="col-md-3">');
                     printf('<a href="detalheProduto.php?produto=%s" class=""><img src="%s" ' .
                         'class="picture-content img-rounded"/></a>', $valor, $valor);
-					printf('<p class="picture-label text-justify">legenda da foto</p>');
+					//printf('<p class="picture-label text-justify">legenda da foto</p>');
 					printf('</div>');
 				}
 				echo '</div>';
