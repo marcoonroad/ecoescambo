@@ -1,4 +1,5 @@
 <?php
+
 	$arquivo           = glob('img/*.*');
 	$quantidade        = 10;
 	$paginaAtual       = (isset($_GET['paginacao'])) ? intval($_GET['paginacao']) : 1;
@@ -27,7 +28,7 @@
 			<?php
 				foreach ($resultado as $valor) {
 					printf('<div class="col-md-3">');
-                    printf('<a href="detalheProduto.php?produto=%s" class=""><img src="%s"' .
+                    printf('<a href="detalheProduto.php?produto=%s" class=""><img src="%s" ' .
                         'class="picture-content img-rounded"/></a>', $valor, $valor);
 					printf('<p class="picture-label text-justify">legenda da foto</p>');
 					printf('</div>');
