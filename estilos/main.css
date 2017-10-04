@@ -8,7 +8,9 @@ body {
 }
 header {
     background-color: #1abc9c;
+    margin-bottom: 1em;
 }
+
 footer {
     position: absolute;
     bottom: 0px;
@@ -21,6 +23,7 @@ footer {
 .picture-label {
     color: gray;
     text-align: center;
+    margin-top: 0.5em;
 }
 
 .picture-content {
@@ -34,7 +37,24 @@ footer {
     font-weight: bold;
 }
 
-.nav a:hover {
-    text-decoration: underline;
-    color: green;
+.nav a:hover,
+.nav li:hover {
+    color: gray;
 }
+
+a.page-link {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    font-size: 1.35em;
+    text-decoration: underline;
+    padding: 0.40em;
+    color: black;
+}
+
+a.page-link:hover {
+    background-color: #333333;
+    color: white;
+    text-decoration: none;
+    border-radius: 35%;
+}
+

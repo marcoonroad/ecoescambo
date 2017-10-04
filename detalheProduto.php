@@ -46,8 +46,8 @@
         <div class="col-sm-12">
           <?php
             printf('<img src="%s" class="img-rounded"/></a>', $produto);
-            printf('<p class="text-justify">Produto: %s </p>', $nomeProduto);
-            printf('<p class="text-justify">Descrição: %s </p>', $arrayDescricaoProdutos[$nomeProduto]);
+            printf('<p class="text-justify"><b>Produto:</b> %s </p>', $nomeProduto);
+            printf('<p class="text-justify"><b>Descrição:</b> %s </p>', $arrayDescricaoProdutos[$nomeProduto]);
            ?>
         </div>
       </div>

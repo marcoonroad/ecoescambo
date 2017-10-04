@@ -36,10 +36,10 @@
 				echo '<hr>';
 				for($i = 1; $i <= $quantidadePaginas; $i++){
 					if($i === $paginaAtual){
-						printf('<a href="#"><u>%s</u></a>', $i);
+						printf('<a class="page-link" href="#"><u>%s</u></a>', $i);
 					}
 					else{
-						printf('<a href="?paginacao=%s">%s</a>', $i, $i);
+						printf('<a class="page-link" href="?paginacao=%s">%s</a>', $i, $i);
 					}
 				}
 				echo '</div>';
