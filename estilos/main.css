@@ -17,3 +17,24 @@ footer {
     background-color: #1abc9c;
     padding: 3% 0 3% 0; position:
 }
+
+.picture-label {
+    color: gray;
+    text-align: center;
+}
+
+.picture-content {
+    display: block;
+    margin: 0 auto;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+    color: green;
+}
