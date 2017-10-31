@@ -22,6 +22,12 @@
       "sorteve" => "Sorvete napolitano delicioso"
   ];
 
+    session_start();
+    if(count($_SESSION) === 0){
+        echo"<script language='javascript' type='text/javascript'>window.location.href='login.php';</script>";
+    }
+
+
  ?>
 
 <!DOCTYPE html>

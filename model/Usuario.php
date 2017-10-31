@@ -7,6 +7,7 @@
     private $telefone;
     private $cep;
     private $senha;
+    private $ativacao;
 
     public function __construct ($nome, $email, $telefone, $cep, $senha) {
         $this -> nome     = $nome;
@@ -14,6 +15,7 @@
         $this -> telefone = $telefone;
         $this -> cep      = $cep;
         $this -> senha    = $senha;
+        $this -> ativacao = 0;
     }
 
     public function getNome ( ) {
@@ -58,8 +60,8 @@
 
     public function persisteUsuario($conexaoBD) {
         $stmt = $conexaoBD -> prepare (
-            'INSERT INTO usuario (nome,email,telefone,cep,senha) ' .
-            'VALUES (:nome, :email, :telefone, :cep, :senha)'
+            'INSERT INTO usuario (nome,email,telefone,cep,senha, ativacao) ' .
+            'VALUES (:nome, :email, :telefone, :cep, :senha, :ativacao)'
         );
 
         $stmt -> bindValue (':nome',     $this -> nome);
@@ -67,6 +69,7 @@
         $stmt -> bindValue (':telefone', $this -> telefone);
         $stmt -> bindValue (':cep',      $this -> cep);
         $stmt -> bindValue (':senha',    $this -> senha);
+        $stmt -> bindValue (':ativacao',  $this -> ativacao);
 
         return $stmt -> execute ( );
     }

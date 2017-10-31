@@ -18,7 +18,7 @@
     <div class="jumbotron">
       <h1 class="display-3 text-center">EcoEscambo</h1>
       <hr class="my-4">
-      <form method="POST" action="">
+      <form method="POST" action="tratamentoLogin.php">
         <div class="form-group">
           <label>E-mail:</label>
           <input type="text" name="email" id="email" class="form-control">

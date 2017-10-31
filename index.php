@@ -24,6 +24,16 @@
     <?php require_once 'templates/header.html'; ?>
 
 	<div class="container" style="padding-bottom: 60px;">
+		<p>
+			<?php
+				session_start();
+				if(count($_SESSION) > 0){
+					if($_SESSION["usuario"]){
+						echo "<p>Sr(a) ". $_SESSION["usuario"]."</p>";
+					}
+				}
+			?>
+		</p>
         <div class="row">
 			<?php
 				foreach ($resultado as $valor) {
