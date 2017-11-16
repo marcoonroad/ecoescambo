@@ -1,4 +1,8 @@
 <?php
+	session_start();
+?>
+
+<?php
 
 	$arquivo           = glob('img/*.*');
 	$quantidade        = 10;
@@ -26,9 +30,8 @@
 	<div class="container" style="padding-bottom: 60px;">
 		<p>
 			<?php
-				session_start();
 				if(count($_SESSION) > 0){
-					if($_SESSION["usuario"]){
+					if(isset($_SESSION["usuario"])){
 						echo "<p>Sr(a) ". $_SESSION["usuario"]."</p>";
 					}
 				}
